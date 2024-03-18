@@ -4,19 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 import React from 'react'; 
 import axios from 'axios'
 
-/*function ProjectGrid() {
-    const projectContent = require("../../../content/project-section/projects.json")
-    const projects = projectContent.projects;
-    return (
-        <Container>
-            {projects.map((project) => <ProjectArticle key={uuidv4()} project={project} /> )}
-        </Container>      
-    );
-}
-
-export default ProjectGrid;
-*/
-
 class ProjectGrid extends React.Component {
 
     constructor(props) {
@@ -70,6 +57,7 @@ class ProjectGrid extends React.Component {
     }
 
     render() {
+        console.log(process.env);
         const isReady = this.state.projects.length > 0;
         if (isReady) {
             console.log(this.state.projects);
