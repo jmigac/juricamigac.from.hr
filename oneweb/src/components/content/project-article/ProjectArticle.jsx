@@ -3,7 +3,7 @@ import Col from "react-bootstrap/esm/Col";
 import "../../../styles/components/content/grid/project-article/project-article.css"
 
 function ProjectArticle({project}) {
-    const technologies = project.usedTechnologies.join(", ");
+    const technologies = project.technologies.join(", ");
     return (
         <Row className="project-article">
             <Col>
