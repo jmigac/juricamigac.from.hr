@@ -1,0 +1,10 @@
+.teaser {
+    color: transparent;
+    width: 66%;
+    height: auto;
+}
+
+.teaser-center {
+    display: flex;
+    justify-content: center;
+}

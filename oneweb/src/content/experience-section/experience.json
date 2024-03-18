@@ -1,0 +1,22 @@
+{
+    "experiences": [
+        {
+            "title": "Lead AEM Developer",
+            "from": "04.2022",
+            "until": "",
+            "description": "Working as an Adobe Experience Manager Developer with the following technology stack: Java, Spring Boot, Javascript, HTML, HTL, SCSS, CSS, JUnit, Mockito, JCache, Redis, JCR, OSGi, Sling, MySQL, Liquid Pixels chains, and Akamai. Active peer code reviewer on Azure and Github on projects for insurance of code quality and for following coding guidelines acquired through years of working on a series of different projects, and requirements. My main responsibility in the Scrum team is to work on maintaining and developing components for campaigns and newsletters, by writing and implementing user stories for easier creation of new content, or new content request through requirements. Active domain developer in Adobe domain where I'm improving internal AEM projects with newer requirements or just application of best practices. Researcher in the domain of Sling and OSGi, for the possibility of extending existing features provided by Adobe Experience Manager through the use of OSGi's interfaces to hide abstract business logic behind custom annotation. Working on a microservice for one of the biggest clothing retail brands, which should be able to shorten Liquid Pixels URL into hashed values, while also providing an in-memory cache for faster access to hashed values in a database. Since the microservice will get millions of requests in a short period of time, the cache is also created per country and per region to assure maximal performance of the microservice."
+        },
+        {
+            "title": "Java Web Developer",
+            "from": "03.2021",
+            "until": "04.2022",
+            "description": "Working as an Adobe Experience Manager Developer with the following technology stack: Java, Javascript, HTML, and HTL. Active peer code reviewer on Azure and Github on projects for insurance of code quality and for following coding guidelines acquired through years of working on a series of different projects, requirements. My main responsibility in Scrum team is to work on maintaining and developing components for campaigns and newsletters, by writing and implementing user stories for easier creation of new content, or new content request through requirements. Through an internship, learning projects, domain, and project work have learned to write unit tests, documentation of done stories, tests and investigations."
+        },
+        {
+            "title": "Java Web Developer - Internship @ IBM iX",
+            "from": "03.2021",
+            "until": "03.2021",
+            "description": "Working on internal starter project developing web components in Adobe Experience Manager, shortly knows as AEM."
+        }
+    ]
+}
