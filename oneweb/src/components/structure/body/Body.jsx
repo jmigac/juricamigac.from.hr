@@ -1,5 +1,4 @@
 import Teaser from "../../content/teaser/Teaser";
-import teaserImage from "../../../images/teaser.JPG"
 import Title from "../header/title/Title";
 import ExperienceGrid from "../../content/grid/ExperienceGrid"
 import Separator from "../../content/separator/Separator";
@@ -13,7 +12,7 @@ function Body() {
         <div>
             <Title text="Jurica Migač" />
             <Separator />
-            <Teaser imageSource={teaserImage} 
+            <Teaser imageSource="https://images.ctfassets.net/x9wbez5bxfw8/4phzvF1wyvRaK9PwmEbk6h/95acef800e131814c634af3c5f7b0f6a/main-photo.JPG" 
                     altText={altTextForBody} 
                     alignment="center" />
             <Separator />
