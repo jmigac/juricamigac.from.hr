@@ -57,7 +57,6 @@ class ProjectGrid extends React.Component {
     }
 
     render() {
-        console.log(process.env);
         const isReady = this.state.projects.length > 0;
         if (isReady) {
             console.log(this.state.projects);
