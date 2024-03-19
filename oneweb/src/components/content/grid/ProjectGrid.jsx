@@ -59,7 +59,6 @@ class ProjectGrid extends React.Component {
     render() {
         const isReady = this.state.projects.length > 0;
         if (isReady) {
-            console.log(this.state.projects);
             return (
                 <Container>
                     {this.state.projects.map((project) => <ProjectArticle key={uuidv4()} project={project} /> )}
