@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react"
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import OneWeb from './OneWeb';
@@ -9,6 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <SpeedInsights />
+    <Analytics />
     <OneWeb />
   </React.StrictMode>
 );
