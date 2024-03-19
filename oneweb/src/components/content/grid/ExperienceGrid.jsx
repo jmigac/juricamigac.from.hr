@@ -4,11 +4,22 @@ import Col from "react-bootstrap/esm/Col"
 import Row from "react-bootstrap/esm/Row"
 import ExperinceArticle from "../experience-article/ExperienceArticle";
 import { v4 as uuidv4 } from 'uuid';
-import axios from 'axios'
 import "../../../styles/components/content/grid/grid.css"
+import Contentful from "../../../services/Contentful";
 
 
 class ExperienceGrid extends React.Component {
+
+    query = `{
+      experienceArticleCollection(limit: 8) {
+        items {
+          title
+          description
+          from
+          until
+        }
+      }
+    }`;
 
     constructor(props) {
         super(props);
@@ -17,48 +28,9 @@ class ExperienceGrid extends React.Component {
         }
     }
 
-    componentDidMount() {
-        this.fetchExperiences();
-    }
-
-    fetchExperiences() {
-        const spaceId = process.env.REACT_APP_SPACE_ID;
-        const environment = process.env.REACT_APP_ENVIRONMENT;
-        const token = process.env.REACT_APP_TOKEN;
-        const api = `https://graphql.contentful.com/content/v1/spaces/${spaceId}/environments/${environment}`;
-        let data = JSON.stringify({
-            query: `{
-            experienceArticleCollection(limit: 8) {
-              items {
-                title
-                description
-                from
-                until
-              }
-            }
-          }`,
-            variables: {}
-          });
-          
-          let config = {
-            method: 'post',
-            maxBodyLength: Infinity,
-            url: api,
-            headers: { 
-              'Content-Type': 'application/json', 
-              'Authorization': `Bearer ${token}`
-            },
-            data : data
-          };
-          
-          axios.request(config)
-          .then((response) => {
-            const experienceArticles = response.data.data.experienceArticleCollection.items;
-            this.setState({ articles: experienceArticles })
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+    async componentDidMount() {
+        const experienceArticles = await Contentful.getExperienceArticles(this.query);
+        this.setState({ articles: experienceArticles });
     }
 
     getColumnWithExperienceArticle(experienceArticle) {
@@ -69,9 +41,10 @@ class ExperienceGrid extends React.Component {
             let month = parseInt(currentDate.getMonth() + 1);
             month = month < 10 ? "0" + month : month; 
             formattedDate = currentDate.getFullYear() + "-" + month;
+            formattedDate = formattedDate.replaceAll("-", ".");
         }
-        let formattedFrom = experienceArticle.from.split("T")[0];
-        const untilDate = untilValue ? formattedDate : experienceArticle.until.split("T")[0];
+        let formattedFrom = experienceArticle.from.split("T")[0].replaceAll("-", ".");
+        const untilDate = untilValue ? formattedDate : experienceArticle.until.split("T")[0].replaceAll("-", ".");
         return (
                 <ExperinceArticle 
                     title={experienceArticle.title}

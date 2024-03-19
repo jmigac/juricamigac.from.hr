@@ -18,7 +18,6 @@ function Body() {
                     alignment="center" />
             <SectionTitle anchor="experiences" title="Experiences" />
             <ExperienceGrid />
-            <Separator />
             <SectionTitle anchor="projects" title="Projects" />
             <ProjectGrid />
             <Separator />
