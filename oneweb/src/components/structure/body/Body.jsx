@@ -13,7 +13,7 @@ function Body() {
             <Separator />
             <Title text="Jurica Migač" />
             <Separator />
-            <Teaser imageSource="https://images.ctfassets.net/x9wbez5bxfw8/4phzvF1wyvRaK9PwmEbk6h/afc27f209acd7661688576d1a4a63879/main-photo.webp" 
+            <Teaser imageSource="https://images.ctfassets.net/x9wbez5bxfw8/4phzvF1wyvRaK9PwmEbk6h/1aa18c128b72f92c65cfbb598c3ba7c9/main-photo.webp" 
                     altText={altTextForBody} 
                     alignment="center" />
             <SectionTitle anchor="experiences" title="Experiences" />
