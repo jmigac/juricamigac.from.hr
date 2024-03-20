@@ -29,7 +29,7 @@ class ExperienceGrid extends React.Component {
     }
 
     async componentDidMount() {
-        const experienceArticles = await Contentful.getExperienceArticles(this.query);
+        const experienceArticles = await Contentful.getExperienceArticles();
         this.setState({ articles: experienceArticles });
     }
 
@@ -65,7 +65,7 @@ class ExperienceGrid extends React.Component {
     }
 
     render() {
-        const isReady = this.state.articles.length > 0;
+        const isReady = this.state.articles != undefined && this.state.articles.length > 0;
         if (isReady) {
             return (
                 <Container className="center experience-grid-padding">

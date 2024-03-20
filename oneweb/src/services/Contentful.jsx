@@ -27,11 +27,19 @@ function getRequestData(query) {
 
  const Contentful = {
 
-    getExperienceArticles : async (query) => {
+    getExperienceArticles : async () => {
         try {
-            let config = getRequestData(query);
+            let config = {
+                method: 'get',
+                maxBodyLength: Infinity,
+                url: "https://contentful-cache-edge-function-n34u1movg-jurica-migacs-projects.vercel.app/experiences",
+                headers: { 
+                  'Content-Type': 'application/json'                
+                }
+              };
             const { data: response } = await axios.request(config);
-            return response.data.experienceArticleCollection.items;
+            console.log(response);
+            return response;
         } catch (error) {
             console.log(error);
         }
