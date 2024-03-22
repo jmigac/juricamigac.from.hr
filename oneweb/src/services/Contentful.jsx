@@ -47,7 +47,6 @@ function getRequestData(query) {
         }
     }
 
-
 }
 
 export default Contentful;

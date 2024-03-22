@@ -7,9 +7,10 @@ function Navigation() {
         <Navbar bg="light" data-bs-theme="light">
             <Container>
             <Nav className="me-auto">
-                <Nav.Link href="#">Jurica</Nav.Link>
+                <Nav.Link href="/">Jurica</Nav.Link>
                 <Nav.Link href="#experiences">Experiences</Nav.Link>
                 <Nav.Link href="#projects">Projects</Nav.Link>
+                <Nav.Link href="https://blog.juricamigac.from.hr">Blog</Nav.Link>
             </Nav>
             </Container>
         </Navbar>

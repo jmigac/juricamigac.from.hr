@@ -4,7 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Analytics } from "@vercel/analytics/react"
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import OneWeb from './OneWeb';
+import OneWeb from './pages/OneWeb';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
