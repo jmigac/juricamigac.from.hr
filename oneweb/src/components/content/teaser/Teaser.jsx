@@ -29,12 +29,14 @@ class Teaser extends React.Component {
 
     render() {
         if (this.state.image != null && this.areWidthAndHeightPresent()) {
+            const srcSet = this.getImageSrcSet();
             return (
                 <div className={'teaser-' + this.alignment}>
                     <img src={this.imageSource} 
                         alt={this.altText} 
                         loading="lazy"
                         className="teaser"
+                        srcSet={srcSet}
                         width={this.state.image?.width}
                         height={this.state.image?.height} /> 
                 </div>
