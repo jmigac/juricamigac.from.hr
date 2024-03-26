@@ -6,15 +6,13 @@ import SectionTitle from "../../content/section-title/SectionTitle";
 import ProjectGrid from "../../content/grid/ProjectGrid";
 
 function Body() {
-    const altTextForBody = "Cover image for index page"
-
     return (
         <div>
             <Separator />
             <Title text="Jurica Migač" />
             <Separator />
-            <Teaser imageSource="https://images.ctfassets.net/x9wbez5bxfw8/4phzvF1wyvRaK9PwmEbk6h/1aa18c128b72f92c65cfbb598c3ba7c9/main-photo.webp" 
-                    altText={altTextForBody} 
+            <Teaser imageSource="./photo.webp" 
+                    altText="Cover image for index page"
                     alignment="center" />
             <SectionTitle anchor="experiences" title="Experiences" />
             <ExperienceGrid />
