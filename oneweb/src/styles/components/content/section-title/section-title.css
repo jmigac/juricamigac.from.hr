@@ -1,6 +1,7 @@
 @media (min-width: 768px) {
     .section-title {
         font-size: 6rem;
+        min-height: 120px;
     }
     
 }
@@ -8,6 +9,7 @@
 @media (min-width: 576px) {
     .section-title {
         font-size: 3rem;
+        min-height: 110px;
     }
     
 }
@@ -36,6 +38,8 @@
 @media (max-width: 576px) {
     .section-title {
         font-size: 2.25rem;
+        min-height: 100px;
+        min-width: 250px;
     }
     
 }

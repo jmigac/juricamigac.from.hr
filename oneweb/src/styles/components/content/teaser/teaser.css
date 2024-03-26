@@ -8,3 +8,50 @@
     display: flex;
     justify-content: center;
 }
+
+@media (min-width: 768px) {
+    .teaser-center {
+        min-width: 700px;
+        min-height: 370px;
+    }
+    
+}
+
+@media (min-width: 576px) {
+    .teaser-center {
+        font-size: 3rem;
+    }
+    
+}
+
+@media (min-width: 992px) {
+    .teaser-center {
+        min-width: 700px;
+        min-height: 500px;
+    }
+    
+}
+
+@media (min-width: 1200px) {
+    .teaser-center {
+        min-width: 800px;
+        min-height: 600px;
+    }
+    
+}
+
+@media (min-width: 1400px) {
+    .teaser-center {
+        min-width: 950px;
+        min-height: 700px;
+    }
+    
+}
+
+@media (max-width: 576px) {
+    .teaser-center {
+        min-width: 200px;
+        min-height: 100px;
+    }
+    
+}
