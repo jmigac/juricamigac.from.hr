@@ -6,16 +6,6 @@ import Contentful from "../../../services/Contentful";
 
 class ProjectGrid extends React.Component {
 
-    query = `{
-      projectArticleCollection(limit: 8) {
-        items {
-          title
-          description
-          technologies
-        }
-      }
-    }`;
-
     constructor(props) {
         super(props);
         this.state = {
@@ -24,7 +14,7 @@ class ProjectGrid extends React.Component {
     }
 
     async componentDidMount() {
-        const projectArticles = await Contentful.getProjectArticles(this.query);
+        const projectArticles = await Contentful.getProjectArticles();
         this.setState({ projects: projectArticles });
     }
 

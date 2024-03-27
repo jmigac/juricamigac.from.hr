@@ -10,17 +10,6 @@ import Contentful from "../../../services/Contentful";
 
 class ExperienceGrid extends React.Component {
 
-    query = `{
-      experienceArticleCollection(limit: 8) {
-        items {
-          title
-          description
-          from
-          until
-        }
-      }
-    }`;
-
     constructor(props) {
         super(props);
         this.state = {
@@ -29,7 +18,7 @@ class ExperienceGrid extends React.Component {
     }
 
     async componentDidMount() {
-        const experienceArticles = await Contentful.getExperienceArticles(this.query);
+        const experienceArticles = await Contentful.getExperienceArticles();
         this.setState({ articles: experienceArticles });
     }
 
