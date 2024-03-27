@@ -4,7 +4,11 @@ const spaceId = process.env.REACT_APP_SPACE_ID;
 const environment = process.env.REACT_APP_ENVIRONMENT;
 const token = process.env.REACT_APP_TOKEN;
 const api = `https://graphql.contentful.com/content/v1/spaces/${spaceId}/environments/${environment}`;
-        
+
+const FUNCTION_APIS = {
+    PROJECTS: "https://cache-function.juricamigac.from.hr/projects",
+    EXPERIENCES: "https://cache-function.juricamigac.from.hr/experiences"
+}
 
 function getRequestData(query) {
     let data = JSON.stringify({
@@ -29,9 +33,8 @@ function getRequestData(query) {
 
     getExperienceArticles : async (query) => {
         try {
-            let config = getRequestData(query);
-            const { data: response } = await axios.request(config);
-            return response.data.experienceArticleCollection.items;
+            const { data: response } = await axios.get(FUNCTION_APIS.EXPERIENCES);
+            return response;
         } catch (error) {
             console.log(error);
         }
@@ -39,9 +42,8 @@ function getRequestData(query) {
     
     getProjectArticles : async (query) => {
         try {
-            let config = getRequestData(query);
-            const { data: response } = await axios.request(config);
-            return response.data.projectArticleCollection.items;
+            const { data: response } = await axios.get(FUNCTION_APIS.PROJECTS);
+            return response;
         } catch (error) {
             console.log(error);
         }
