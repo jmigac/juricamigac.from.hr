@@ -38,12 +38,12 @@
 @media (max-width: 576px) {
     .section-title {
         font-size: 2.25rem;
-        min-height: 100px;
+        min-height: 43px;
         min-width: 250px;
     }
     
 }
 
 .section-title {
-    padding: 2rem 0;
+    margin: 2rem 0;
 }
