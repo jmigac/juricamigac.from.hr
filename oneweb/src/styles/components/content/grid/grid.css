@@ -1,3 +1,15 @@
 .experience-grid-padding {
     padding: 0 2rem;
 }
+
+
+@media (max-width: 576px) {
+    .footer {
+        min-height: 1350px;
+    }
+
+    .experience-grid {
+        min-height: 1500px;
+    }
+    
+}

@@ -57,7 +57,7 @@ class ExperienceGrid extends React.Component {
         const isReady = this.state.articles.length > 0;
         if (isReady) {
             return (
-                <Container className="center experience-grid-padding">
+                <Container className="center experience-grid-padding experience-grid">
                     {this.state.articles.map((experienceArticle) => this.getExperienceRow(experienceArticle))}
                 </Container>
             )
