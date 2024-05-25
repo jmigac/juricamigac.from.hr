@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import GlucoseLevel from '../glucose-level/GlucoseLevel';
 
 function Navigation() {
     return (
@@ -12,7 +13,9 @@ function Navigation() {
                 <Nav.Link href="#projects">Projects</Nav.Link>
                 <Nav.Link href="https://blog.juricamigac.from.hr">Blog</Nav.Link>
             </Nav>
+            <GlucoseLevel />
             </Container>
+            
         </Navbar>
     );
 }
