@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@vercel/analytics": "^1.2.2",
+    "dayjs": "^1.11.11",
     "react-markdown": "^9.0.1"
   }
 }
