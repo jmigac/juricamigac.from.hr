@@ -13,9 +13,7 @@ function Navigation() {
                 <Nav.Link href="#projects">Projects</Nav.Link>
                 <Nav.Link href="https://blog.juricamigac.from.hr">Blog</Nav.Link>
             </Nav>
-            <GlucoseLevel />
             </Container>
-            
         </Navbar>
     );
 }

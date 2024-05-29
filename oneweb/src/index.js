@@ -2,16 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Analytics } from "@vercel/analytics/react"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import OneWeb from './pages/OneWeb';
+import GlucosePage from './pages/GlucosePage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <SpeedInsights />
     <Analytics />
-    <OneWeb />
+    <div>
+      <Router>
+        <Routes>
+          <Route path='/' element={<OneWeb />}></Route>
+          <Route path='/glucose' element={<GlucosePage />}></Route>
+        </Routes>
+      </Router>
+    </div>
+
   </React.StrictMode>
 );
 
