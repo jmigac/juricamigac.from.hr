@@ -15,7 +15,6 @@ export default class GlucoseLevel extends React.Component {
             const level = response.data.value;
             const date = response.data.date;
             this.setState({ level: level, date: date });
-            console.log(response);
         })
     }
 
@@ -24,7 +23,7 @@ export default class GlucoseLevel extends React.Component {
         return (
             <ul className="glucose-list center-screen">
                 <li>
-                    <h1>{this.state.level} mmol/L </h1>
+                    <h1>{this.state.level} mmol/L</h1>
                 </li>
                 <li>
                     <h2>{formattedDate}</h2>
