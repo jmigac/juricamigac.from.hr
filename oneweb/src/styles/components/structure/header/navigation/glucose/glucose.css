@@ -1,14 +1,16 @@
 .glucose-list {
     list-style-type: none;
+    padding: 0;
 }
 
 .glucose-list h1 {
-    font-size: 6rem;
+    font-size: 5rem;
+    text-align: center;
 }
 
 .glucose-list h2 {
     text-align: center;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .center-screen {
