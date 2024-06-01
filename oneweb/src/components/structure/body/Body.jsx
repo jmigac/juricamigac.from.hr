@@ -5,20 +5,20 @@ import Separator from "../../content/separator/Separator";
 import SectionTitle from "../../content/section-title/SectionTitle";
 import ProjectGrid from "../../content/grid/ProjectGrid";
 
-function Body() {
-    const teaserImage = "https://images.ctfassets.net/x9wbez5bxfw8/6QvPczVLmABEhT7ooDidaC/c7ec315c6b143a70ecbaa07d8b1ec875/photo.webp"
+function Body(props) {
+    const homePageData = props.data;
     return (
         <div>
             <Separator />
-            <Title text="Jurica Migač" />
+            <Title text={homePageData.title} />
             <Separator />
-            <Teaser imageSource={teaserImage} 
-                    altText="Cover image for index page"
+            <Teaser imageSource={homePageData.teaser.url} 
+                    altText={homePageData.teaser.description}
                     alignment="center" />
             <SectionTitle anchor="experiences" title="Experiences" />
-            <ExperienceGrid />
+            <ExperienceGrid experiences={homePageData.experiencesCollection.items}/>
             <SectionTitle anchor="projects" title="Projects" />
-            <ProjectGrid />
+            <ProjectGrid projects={homePageData.projectsCollection.items} />
             <Separator />
         </div>
     );
