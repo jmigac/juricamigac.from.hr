@@ -18,18 +18,26 @@ export default class GlucoseLevel extends React.Component {
         })
     }
 
-    render() {
-        const formattedDate = dayjs(this.state.date).format("DD.MM.YYYY HH:mm")
-        return (
-            <ul className="glucose-list center-screen">
-                <li>
-                    <h1>{this.state.level} mmol/L</h1>
-                </li>
-                <li>
-                    <h2>{formattedDate}</h2>
-                </li>
-            </ul>
-        );
+    isDataExisting() {
+        return this.state.level && this.state.date;
     }
+
+    render() {
+        const dataExist = this.isDataExisting();
+        if (dataExist) {
+            const formattedDate = dayjs(this.state.date).format("DD.MM.YYYY HH:mm")
+            return (
+                <ul className="glucose-list center-screen">
+                    <li>
+                        <h1>{this.state.level} mmol/L</h1>
+                    </li>
+                    <li>
+                        <h2>{formattedDate}</h2>
+                    </li>
+                </ul>
+            );
+        }
+    }
+
 
 }
