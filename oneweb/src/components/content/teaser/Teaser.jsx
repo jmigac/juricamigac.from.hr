@@ -9,31 +9,33 @@ class Teaser extends React.Component {
         this.altText = props.altText;
         this.alignment = props.alignment;
         this.state = {
-            image: null
+            image: null,
+            imageIsReady: false
         }
     }
 
     componentDidMount() {
         const image = new Image();
         image.src = this.imageSource;
-        this.setState({ image: image });
-    }
-
-    areWidthAndHeightPresent() {
-        return this.state.image?.width !== 0 && this.state.image?.height !== 0
+        this.setState({ image: image }, () => {
+            this.setState({ imageIsReady: true });
+        });
     }
 
     render() {
-        if (this.state.image != null && this.areWidthAndHeightPresent()) {
+        const imageIsReady = this.state.imageIsReady;
+        if (imageIsReady) {
             return (
-                <div className={'teaser-' + this.alignment}>
-                    <img src={this.imageSource} 
-                        alt={this.altText} 
-                        loading="lazy"
-                        className="teaser"
-                        width={this.state.image?.width}
-                        height={this.state.image?.height} /> 
-                </div>
+                <React.Fragment>
+                    <div className={'teaser-' + this.alignment}>
+                        <img src={this.state.image?.src} 
+                            alt={this.altText} 
+                            loading="lazy"
+                            className="teaser"
+                            width={this.state.image?.width}
+                            height={this.state.image?.height} /> 
+                    </div>
+                </React.Fragment>
             );
         }
     }
