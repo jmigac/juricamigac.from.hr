@@ -4,13 +4,9 @@ import ExperienceGrid from "../../content/grid/ExperienceGrid"
 import Separator from "../../content/separator/Separator";
 import SectionTitle from "../../content/section-title/SectionTitle";
 import ProjectGrid from "../../content/grid/ProjectGrid";
-import preload from "react-dom";
 
 function Body() {
     const teaserImage = "https://images.ctfassets.net/x9wbez5bxfw8/6QvPczVLmABEhT7ooDidaC/c7ec315c6b143a70ecbaa07d8b1ec875/photo.webp"
-    preload(teaserImage, {
-        as: "image"
-    });
     return (
         <div>
             <Separator />
