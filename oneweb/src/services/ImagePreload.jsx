@@ -1,4 +1,4 @@
-import { preload } from "react-dom"
+import preload from "react-dom"
 
 const ImagePreload = {
 
