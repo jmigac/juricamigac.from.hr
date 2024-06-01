@@ -5,8 +5,6 @@ import Row from "react-bootstrap/esm/Row"
 import ExperinceArticle from "../experience-article/ExperienceArticle";
 import { v4 as uuidv4 } from 'uuid';
 import "../../../styles/components/content/grid/grid.css"
-import Contentful from "../../../services/Contentful";
-
 
 class ExperienceGrid extends React.Component {
 
@@ -18,8 +16,7 @@ class ExperienceGrid extends React.Component {
     }
 
     async componentDidMount() {
-        const experienceArticles = await Contentful.getExperienceArticles();
-        this.setState({ articles: experienceArticles });
+        this.setState({ articles: this.props.experiences });
     }
 
     getColumnWithExperienceArticle(experienceArticle) {
