@@ -11,11 +11,11 @@ export default class GlucoseLevel extends React.Component {
     }
 
     componentDidMount() {
-        axios.get("https://cache-function.juricamigac.from.hr/glucose/latest").then(response => {
+        axios.get("https://api.juricamigac.from.hr/v1/glucose").then(response => {
             const level = response.data.value;
             const date = response.data.date;
             this.setState({ level: level, date: date });
-        })
+        });
     }
 
     isDataExisting() {
