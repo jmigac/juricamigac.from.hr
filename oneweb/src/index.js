@@ -7,7 +7,6 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import OneWeb from './pages/OneWeb';
 import GlucosePage from './pages/GlucosePage';
-import NotFoundPage from './pages/NotFoundPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,7 +18,6 @@ root.render(
         <Routes>
           <Route path='/' element={<OneWeb />}></Route>
           <Route path='/glucose' element={<GlucosePage />}></Route>
-          <Route path='*' element={<NotFoundPage />}></Route>
         </Routes>
       </Router>
     </div>
