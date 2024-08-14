@@ -7,7 +7,7 @@ import axios from 'axios';
 import {useState, useEffect} from 'react'
 
 function OneWeb() {
-    const homePageUrl = 'https://cache-function.juricamigac.from.hr/homePage';
+    const homePageUrl = 'https://api.juricamigac.from.hr/v1/oneweb/homePage';
     const [homePageData, setHomePageData] = useState(null);
 
     useEffect(() => {
