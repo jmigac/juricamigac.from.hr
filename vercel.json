@@ -1,0 +1,18 @@
+{
+  "crons": [
+    {
+      "path": "/",
+      "schedule": "0 0 * * *"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/github",
+      "destination": "https://github.com/jmigac"
+    },
+    {
+      "source": "/linkedin",
+      "destination": "https://www.linkedin.com/in/jmigac/"
+    }
+  ]
+}
