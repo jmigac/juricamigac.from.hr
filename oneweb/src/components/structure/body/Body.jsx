@@ -4,6 +4,7 @@ import ExperienceGrid from "../../content/grid/ExperienceGrid"
 import Separator from "../../content/separator/Separator";
 import SectionTitle from "../../content/section-title/SectionTitle";
 import ProjectGrid from "../../content/grid/ProjectGrid";
+import ExpertiseGrid from "../../content/grid/ExpertiseGrid";
 
 function Body(props) {
     const homePageData = props.data;
@@ -19,6 +20,9 @@ function Body(props) {
             <ExperienceGrid experiences={homePageData.experiencesCollection.items}/>
             <SectionTitle anchor="projects" title="Projects" />
             <ProjectGrid projects={homePageData.projectsCollection.items} />
+            <Separator />
+            <SectionTitle anchor="expertise" title="Expertise" />
+            <ExpertiseGrid expertises={homePageData.expertisesCollection.items} />
             <Separator />
         </div>
     );
