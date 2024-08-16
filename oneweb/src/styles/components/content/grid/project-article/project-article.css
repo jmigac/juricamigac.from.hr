@@ -14,3 +14,7 @@
     flex-wrap: wrap;
     flex-direction: row;
 }
+
+.project-article .col a {
+    text-decoration: none;
+}
