@@ -2,18 +2,25 @@ import { FaLinkedinIn, FaGithub, FaDev } from "react-icons/fa";
 import "../../../../styles/components/structure/footer/social-media-links/social-media-links.css"
 import "../../../../styles/global.css"
 
-function SocialMediaLinks() {
+function SocialMediaLinks(props) {
+    const socialMediaLinks = props.data;
     return (
         <div class="social-media-links flex center">
-            <a href="https://www.linkedin.com/in/jmigac/" 
-               rel="noreferrer" 
-               target="_blank"><FaLinkedinIn /></a>
-            <a href="https://www.github.com/jmigac" 
-               rel="noreferrer"
-               target="_blank"><FaGithub /></a>
-            <a href="https://dev.to/jmigac" 
-               rel="noreferrer"
-               target="_blank"><FaDev /></a>
+            { socialMediaLinks.showLinkedIn &&
+                <a href={socialMediaLinks.linkedInUrl} 
+                rel="noreferrer" 
+                target="_blank"><FaLinkedinIn /></a>
+            }
+            { socialMediaLinks.showGithub && 
+                <a href={socialMediaLinks.githubUrl} 
+                rel="noreferrer"
+                target="_blank"><FaGithub /></a>
+            }
+            { socialMediaLinks.showDevTo && 
+                <a href={socialMediaLinks.devToUrl}
+                rel="noreferrer"
+                target="_blank"><FaDev /></a>
+            }
         </div>
     );
 }
