@@ -14,5 +14,16 @@
       "source": "/linkedin",
       "destination": "https://www.linkedin.com/in/jmigac/"
     }
+  ],
+  "headers": [
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=600, stale-while-revalidate=86400"
+        }
+      ]
+    }
   ]
 }

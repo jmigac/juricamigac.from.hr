@@ -1,15 +1,11 @@
 .experience-grid-padding {
     padding: 0 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
-
-@media (max-width: 576px) {
-    .project-container {
-        min-height: 1350px;
-    }
-
-    .experience-grid {
-        min-height: 1500px;
-    }
-    
+.project-container {
+    padding: 0 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
 }

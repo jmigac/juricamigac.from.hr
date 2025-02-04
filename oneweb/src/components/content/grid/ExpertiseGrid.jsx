@@ -1,7 +1,6 @@
-import Container from "react-bootstrap/esm/Container";
 import ExpertiseArticle from "../expertise-article/ExpertiseArticle";
-import { v4 as uuidv4 } from 'uuid';
-import React from 'react'; 
+import {v4 as uuidv4} from 'uuid';
+import React from 'react';
 import "../../../styles/components/content/grid/grid.css"
 
 class ExpertiseGrid extends React.Component {
@@ -22,9 +21,9 @@ class ExpertiseGrid extends React.Component {
         if (isReady) {
             const expertises = this.state.expertises;
             return (
-                <Container className="project-container">
+                <div className="project-container">
                       {expertises.map((expertise) => <ExpertiseArticle key={uuidv4()} expertise={expertise} /> )}
-                </Container>
+                </div>
             );
         }
     }

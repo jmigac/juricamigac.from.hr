@@ -23,7 +23,7 @@ function OneWeb() {
             <div>
                 <Header />
                 <Body data={homePageData} />
-                <Footer />
+                <Footer data={homePageData.footer}/>
             </div>
         );
     }

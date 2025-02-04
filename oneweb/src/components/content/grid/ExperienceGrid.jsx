@@ -1,9 +1,8 @@
-import Container from "react-bootstrap/esm/Container";
-import React from 'react'; 
+import React from 'react';
 import Col from "react-bootstrap/esm/Col"
 import Row from "react-bootstrap/esm/Row"
 import ExperinceArticle from "../experience-article/ExperienceArticle";
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 import "../../../styles/components/content/grid/grid.css"
 
 class ExperienceGrid extends React.Component {
@@ -54,9 +53,9 @@ class ExperienceGrid extends React.Component {
         const isReady = this.state.articles.length > 0;
         if (isReady) {
             return (
-                <Container className="center experience-grid-padding experience-grid">
+                <div className="center experience-grid-padding experience-grid">
                     {this.state.articles.map((experienceArticle) => this.getExperienceRow(experienceArticle))}
-                </Container>
+                </div>
             )
         }
     }
