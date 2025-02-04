@@ -8,17 +8,20 @@ function SocialMediaLinks(props) {
         <div className="social-media-links flex center">
             { socialMediaLinks.showLinkedIn &&
                 <a href={socialMediaLinks.linkedInUrl} 
-                rel="noreferrer" 
+                rel="noreferrer"
+                aria-label={socialMediaLinks.linkedInAriaLabel}
                 target="_blank"><FaLinkedinIn /></a>
             }
             { socialMediaLinks.showGithub && 
                 <a href={socialMediaLinks.githubUrl} 
                 rel="noreferrer"
+                aria-label={socialMediaLinks.githubAriaLabel}
                 target="_blank"><FaGithub /></a>
             }
             { socialMediaLinks.showDevTo && 
                 <a href={socialMediaLinks.devToUrl}
                 rel="noreferrer"
+                aria-label={socialMediaLinks.devToAriaLabel}
                 target="_blank"><FaDev /></a>
             }
         </div>
