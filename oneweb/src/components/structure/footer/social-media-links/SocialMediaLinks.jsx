@@ -5,7 +5,7 @@ import "../../../../styles/global.css"
 function SocialMediaLinks(props) {
     const socialMediaLinks = props.data;
     return (
-        <div class="social-media-links flex center">
+        <div className="social-media-links flex center">
             { socialMediaLinks.showLinkedIn &&
                 <a href={socialMediaLinks.linkedInUrl} 
                 rel="noreferrer" 
