@@ -3,28 +3,24 @@ import '../styles/global.css'
 import Header from "../components/structure/header/header/Header";
 import Body from "../components/structure/body/Body"
 import Footer from '../components/structure/footer/footer/Footer';
-import axios from 'axios';
-import {useState, useEffect} from 'react'
+import {useQuery} from "react-query";
 
 function OneWeb() {
     const homePageUrl = 'https://api.juricamigac.from.hr/v1/oneweb/homePage';
-    const [homePageData, setHomePageData] = useState(null);
 
-    useEffect(() => {
-        const fetchData = async () => {
-          const response = await axios.get(homePageUrl);
-          setHomePageData(response.data);
-        }
-        fetchData();
-      }, []);
+    const fetchHomePage = async () => {
+        const result = await fetch(homePageUrl);
+        return result.json();
+    }
 
-    if (homePageData) {
+    const { data, status } = useQuery("homePage", fetchHomePage);
+    if (data && status === "success") {
         return (
-            <div>
+            <>
                 <Header />
-                <Body data={homePageData} />
-                <Footer data={homePageData.footer}/>
-            </div>
+                <Body data={data} />
+                <Footer data={data.footer}/>
+            </>
         );
     }
 }
