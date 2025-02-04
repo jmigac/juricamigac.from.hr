@@ -7,21 +7,22 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import OneWeb from './pages/OneWeb';
 import GlucosePage from './pages/GlucosePage';
+import {QueryClient, QueryClientProvider} from "react-query";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const queryClient = new QueryClient();
 root.render(
   <React.StrictMode>
     <SpeedInsights />
     <Analytics />
-    <div>
-      <Router>
-        <Routes>
-          <Route path='/' element={<OneWeb />}></Route>
-          <Route path='/glucose' element={<GlucosePage />}></Route>
-        </Routes>
-      </Router>
-    </div>
-
+      <QueryClientProvider client={queryClient}>
+          <Router>
+              <Routes>
+                  <Route path='/' element={<OneWeb />}></Route>
+                  <Route path='/glucose' element={<GlucosePage />}></Route>
+              </Routes>
+          </Router>
+      </QueryClientProvider>
   </React.StrictMode>
 );
 
