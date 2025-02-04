@@ -12,7 +12,7 @@ class AboutMe extends React.Component {
     render() {
         return (
           <div className='about-me-container'>
-              <h1 className='justify-content-start'>{this.title}</h1>
+              <h2 className='justify-content-start about-me-title'>{this.title}</h2>
               <p>{this.description}</p>
           </div>
         );

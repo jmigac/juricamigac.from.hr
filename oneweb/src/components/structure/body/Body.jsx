@@ -1,7 +1,6 @@
 import Teaser from "../../content/teaser/Teaser";
 import AboutMe from "../../content/about-me/AboutMe";
 import ExperienceGrid from "../../content/grid/ExperienceGrid"
-import Separator from "../../content/separator/Separator";
 import SectionTitle from "../../content/section-title/SectionTitle";
 import ProjectGrid from "../../content/grid/ProjectGrid";
 import ExpertiseGrid from "../../content/grid/ExpertiseGrid";
@@ -10,7 +9,6 @@ function Body(props) {
     const homePageData = props.data;
     return (
         <>
-            <Separator />
             <Teaser imageSource={homePageData?.teaser?.url}
                     altText={homePageData?.teaser?.description}
                     title={homePageData?.title}
