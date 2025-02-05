@@ -1,8 +1,5 @@
 import React from 'react';
-import Col from "react-bootstrap/esm/Col"
-import Row from "react-bootstrap/esm/Row"
 import ExperinceArticle from "../experience-article/ExperienceArticle";
-import {v4 as uuidv4} from 'uuid';
 import "../../../styles/components/content/grid/grid.css"
 
 class ExperienceGrid extends React.Component {
@@ -41,11 +38,9 @@ class ExperienceGrid extends React.Component {
 
     getExperienceRow(experienceArticle) {
         return (
-            <Row key={uuidv4()}>
-                <Col xs={12} md={12}>
+                <>
                     {this.getColumnWithExperienceArticle(experienceArticle)}
-                </Col>
-            </ Row>
+                </>
         );
     }
 
