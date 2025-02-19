@@ -1,6 +1,6 @@
 import Markdown from "react-markdown";
 
-function ExperinceArticle({title, from, until, description}) {
+export default function ExperienceArticle({title, from, until, description}) {
     return (
         <>
             <h3>{title}</h3>
@@ -9,5 +9,3 @@ function ExperinceArticle({title, from, until, description}) {
         </>
     );
 }
-
-export default ExperinceArticle;
