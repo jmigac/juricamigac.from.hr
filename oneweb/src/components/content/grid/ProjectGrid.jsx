@@ -1,32 +1,28 @@
 import ProjectArticle from "../project-article/ProjectArticle";
 import {v4 as uuidv4} from 'uuid';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "../../../styles/components/content/grid/grid.css"
 
-class ProjectGrid extends React.Component {
+export default function ProjectGrid({ projects }) {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            projects: []
-        }
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        setLoading(true);
+    }, []);
+
+    useEffect(() => {
+        setData(projects);
+        setLoading(false);
+    }, [projects]);
+
+    if (!loading && data) {
+        const projectMarkup = projects.map((project) => <ProjectArticle key={uuidv4()} project={project} />);
+        return (
+            <div className="project-container">
+                {projectMarkup}
+            </div>
+        );
     }
-
-    async componentDidMount() {
-        this.setState({ projects: this.props.projects });
-    }
-
-    render() {
-        const isReady = this.state.projects.length > 0;
-        if (isReady) {
-            const projects = this.state.projects;
-            return (
-                <div className="project-container">
-                      {projects.map((project) => <ProjectArticle key={uuidv4()} project={project} /> )}
-                </div>
-            );
-        }
-    }
-}
-
-export default ProjectGrid;
+};

@@ -1,51 +1,39 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "../../../styles/components/content/teaser/teaser.css"
 import Title from "../../structure/header/title/Title";
+import Skeleton from "react-loading-skeleton";
 
-class Teaser extends React.Component {
+export default function Teaser({ imageSource, altText, alignment, title}) {
 
-    constructor(props) {
-        super(props);
-        this.imageSource = props.imageSource;
-        this.altText = props.altText;
-        this.alignment = props.alignment;
-        this.title = props.title;
-        this.state = {
-            image: null,
-            imageIsReady: false
-        }
-    }
+    const [imageReady, setImageReady] = useState(false);
+    const [image, setImage] = useState(null);
 
-    componentDidMount() {
+    useEffect(() => {
+        setImageReady(true);
+    }, []);
+
+    useEffect(() => {
         const image = new Image();
-        image.src = this.imageSource;
-        this.setState({ image: image }, () => {
-            this.setState({ imageIsReady: true });
-        });
-    }
+        image.src = imageSource;
+        setImage(image);
+        setImageReady(false);
+    }, [imageSource]);
 
-    render() {
-        const imageIsReady = this.state.imageIsReady;
-        if (imageIsReady) {
-            return (
-                <>
-                    <div className='teaser-container'>
-                        <div className='teaser-wrapper'>
-                            <div className='teaser-item'>
-                                <Title text={this.title} />
-                                <img src={this.state.image?.src}
-                                     alt={this.altText}
-                                     loading="lazy"
-                                     className="teaser-image"
-                                     width={this.state.image?.width}
-                                     height={this.state.image?.height}/>
-                            </div>
-                        </div>
-                    </div>
-                </>
-            );
-        }
-    }
+    const imageMarkup = (imageReady && <Skeleton height={500} />) || (<img src={image?.src}
+                                            alt={altText}
+                                            loading="lazy"
+                                            className="teaser-image"
+                                            width={image?.width}
+                                            height={image?.height}/>)
+    return (
+        <div className='teaser-container'>
+            <div className='teaser-wrapper'>
+                <div className='teaser-item'>
+                    <Title text={title}/>
+                    {imageMarkup}
+                </div>
+            </div>
+        </div>
+    );
+
 }
-
-export default Teaser;

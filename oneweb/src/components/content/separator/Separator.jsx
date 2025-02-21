@@ -1,10 +1,8 @@
 
 import "../../../styles/components/content/separator/separator.css"
 
-function Separator() {
+function Separator(){
     return (
         <div className="separator"></div>
     );
 }
-
-export default Separator;

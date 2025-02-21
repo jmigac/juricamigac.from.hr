@@ -1,32 +1,29 @@
 import ExpertiseArticle from "../expertise-article/ExpertiseArticle";
 import {v4 as uuidv4} from 'uuid';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "../../../styles/components/content/grid/grid.css"
 
-class ExpertiseGrid extends React.Component {
+export default function ExpertiseGrid({ expertises }) {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            expertises: []
-        }
+    const [loading, setLoading] = useState(false);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        setLoading(true);
+    }, []);
+
+    useEffect(() => {
+        setData(expertises);
+        setLoading(false);
+    }, [expertises]);
+
+    if (!loading && data) {
+        const expertiseArticles = expertises.map((expertise) => <ExpertiseArticle key={uuidv4()} expertise={expertise} />);
+        return (
+            <div className="project-container">
+                {expertiseArticles}
+            </div>
+        );
     }
 
-    async componentDidMount() {
-        this.setState({ expertises: this.props.expertises });
-    }
-
-    render() {
-        const isReady = this.state.expertises.length > 0;
-        if (isReady) {
-            const expertises = this.state.expertises;
-            return (
-                <div className="project-container">
-                      {expertises.map((expertise) => <ExpertiseArticle key={uuidv4()} expertise={expertise} /> )}
-                </div>
-            );
-        }
-    }
 }
-
-export default ExpertiseGrid;
