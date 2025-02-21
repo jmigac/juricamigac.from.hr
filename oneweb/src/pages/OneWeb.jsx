@@ -5,8 +5,9 @@ import Body from "../components/structure/body/Body"
 import Footer from '../components/structure/footer/footer/Footer';
 import {useQuery} from "react-query";
 import {useEffect, useState} from "react";
+import ReactGA from 'react-ga4';
 
-
+const TRACKING_ID = "G-9913LRFYPE"
 export default function OneWeb() {
 
     const [oneWebData, setOneWebData] = useState({});
@@ -27,6 +28,11 @@ export default function OneWeb() {
         setOneWebData({ response: data, status: status });
         setLoading(false);
     }, [data, status]);
+
+    useEffect(() => {
+        ReactGA.initialize(TRACKING_ID);
+        ReactGA.send({ hitType: "pageview", page: "/", title: "Jurica Migač" });
+    }, []);
 
     if (oneWebData.response && oneWebData.status === 'success' && !loading) {
         return (
