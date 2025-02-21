@@ -2,14 +2,11 @@ import Copyright from "../copyright/Copyright";
 import "../../../../styles/components/structure/footer/footer/footer.css"
 import SocialMediaLinks from "../social-media-links/SocialMediaLinks";
 
-function Footer(props) {
-    const footer = props.data;
+export default function Footer({ data }) {
     return (
         <footer className="footer">
             <Copyright />
-            <SocialMediaLinks data={footer.socialMediaLinks} />
+            <SocialMediaLinks data={data.socialMediaLinks} />
         </footer>
     );
 }
-
-export default Footer;

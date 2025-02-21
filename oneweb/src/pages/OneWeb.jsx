@@ -4,23 +4,38 @@ import Header from "../components/structure/header/header/Header";
 import Body from "../components/structure/body/Body"
 import Footer from '../components/structure/footer/footer/Footer';
 import {useQuery} from "react-query";
+import {useEffect, useState} from "react";
 
-
-const homePageUrl = 'https://api.juricamigac.from.hr/v1/oneweb/homePage';
-const fetchHomePage = async () => {
-    const result = await fetch(homePageUrl);
-    return result.json();
-}
 
 export default function OneWeb() {
-    const { data, status } = useQuery("homePage", fetchHomePage);
-    if (data && status === "success") {
+
+    const [oneWebData, setOneWebData] = useState({});
+    const [loading, setLoading] = useState(false);
+    const homePageUrl = 'https://api.juricamigac.from.hr/v1/oneweb/homePage';
+    const fetchHomePage = async () => {
+        const result = await fetch(homePageUrl);
+        return result.json();
+    }
+
+    useEffect(() => {
+        setLoading(true);
+    }, []);
+
+    const { data, status } = useQuery('homePage', fetchHomePage);
+
+    useEffect(() => {
+        setOneWebData({ response: data, status: status });
+        setLoading(false);
+    }, [data, status]);
+
+    if (oneWebData.response && oneWebData.status === 'success' && !loading) {
         return (
             <>
                 <Header />
-                <Body data={data} />
-                <Footer data={data.footer}/>
+                <Body data={oneWebData.response} />
+                <Footer data={oneWebData.response.footer}/>
             </>
         );
     }
+
 }
