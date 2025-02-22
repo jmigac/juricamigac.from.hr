@@ -6,6 +6,7 @@ import Footer from '../components/structure/footer/footer/Footer';
 import {useQuery} from "react-query";
 import {useEffect, useState} from "react";
 import Cookies from "js-cookie";
+import ReactGA from 'react-ga4';
 
 
 const Locales = {
@@ -13,6 +14,7 @@ const Locales = {
     HR_HR: 'hr-HR'
 }
 
+const TRACKING_ID = "G-9913LRFYPE"
 export default function OneWeb() {
 
     function HandleIconChange() {
@@ -92,7 +94,10 @@ export default function OneWeb() {
     }, [data, status, locale]);
 
     const buttonMarkup = (<img src={icon} width='16' height='16' alt='Locale changing icon' onClick={()=>{ HandleLanguageChange(); }}></img>);
-
+    useEffect(() => {
+        ReactGA.initialize(TRACKING_ID);
+        ReactGA.send({ hitType: "pageview", page: "/", title: "Jurica Migač" });
+    }, []);
     if (oneWebData.response && oneWebData.status === 'success' && !loading) {
         return (
             <>

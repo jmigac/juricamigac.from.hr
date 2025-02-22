@@ -2,6 +2,15 @@ import React, {useEffect, useState} from "react";
 import "../../../styles/components/content/teaser/teaser.css"
 import Title from "../../structure/header/title/Title";
 import Skeleton from "react-loading-skeleton";
+import ReactGA from "react-ga4";
+
+const handleImageClick = (desc) => {
+    ReactGA.event({
+        category: "image",
+        action: "click",
+        label: desc,
+    })
+}
 
 export default function Teaser({ imageSource, altText, alignment, title}) {
 
@@ -23,6 +32,7 @@ export default function Teaser({ imageSource, altText, alignment, title}) {
                                             alt={altText}
                                             loading="lazy"
                                             className="teaser-image"
+                                            onClick={() => handleImageClick("Teaser")}
                                             width={image?.width}
                                             height={image?.height}/>)
     return (
