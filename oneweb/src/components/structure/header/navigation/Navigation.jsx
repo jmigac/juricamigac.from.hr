@@ -2,7 +2,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-export default function Navigation() {
+
+export default function Navigation({ languageChange }) {
+
     return (
         <Navbar bg="light" data-bs-theme="light">
             <Container>
@@ -12,6 +14,11 @@ export default function Navigation() {
                     <Nav.Link href="#projects">Projects</Nav.Link>
                     <Nav.Link href="#expertise">Expertise</Nav.Link>
                     <Nav.Link href="https://blog.juricamigac.from.hr">Blog</Nav.Link>
+                    <Nav.Item>
+                        <Nav.Link>
+                            { languageChange }
+                        </Nav.Link>
+                    </Nav.Item>
                 </Nav>
             </Container>
         </Navbar>

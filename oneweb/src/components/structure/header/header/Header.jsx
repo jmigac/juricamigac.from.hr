@@ -1,9 +1,9 @@
 import Navigation from "../navigation/Navigation";
 
-export default function Header() {
+export default function Header({languageChange}) {
     return (
         <header>
-            <Navigation />
+            <Navigation languageChange={languageChange} />
         </header>
     );
 }
