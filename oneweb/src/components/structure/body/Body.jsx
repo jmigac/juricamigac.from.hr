@@ -14,11 +14,11 @@ function Body(props) {
                     title={homePageData?.title}
                     alignment="center" />
             <AboutMe data={homePageData?.aboutMe} />
-            <SectionTitle anchor="experiences" title="Experiences" />
+            <SectionTitle anchor="experiences" title={homePageData.experiencesTitle?.title} />
             <ExperienceGrid experiences={homePageData?.experiencesCollection?.items}/>
-            <SectionTitle anchor="projects" title="Projects" />
+            <SectionTitle anchor="projects" title={homePageData.projectsTitle?.title} />
             <ProjectGrid projects={homePageData?.projectsCollection?.items} />
-            <SectionTitle anchor="expertise" title="Expertise" />
+            <SectionTitle anchor="expertise" title={homePageData.expertiseTitle?.title} />
             <ExpertiseGrid expertises={homePageData?.expertisesCollection?.items} />
         </>
     );
