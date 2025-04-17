@@ -1,0 +1,17 @@
+.experienceGridPadding {
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.projectContainer {
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+@media (max-width: 1200px) {
+    .experienceGridPadding {
+        padding: 2.5rem;
+    }
+}

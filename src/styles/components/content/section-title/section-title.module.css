@@ -1,0 +1,43 @@
+@media (min-width: 768px) {
+    .sectionTitle {
+        font-size: 6rem;
+    }
+
+}
+
+@media (min-width: 576px) {
+    .sectionTitle {
+        font-size: 3rem;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .sectionTitle {
+        font-size: 3rem;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .sectionTitle {
+        font-size: 3.25rem;
+    }
+
+}
+
+@media (min-width: 1400px) {
+    .sectionTitle {
+        font-size: 3.75rem;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .sectionTitle {
+        font-size: 2.25rem;
+        min-height: 80px;
+        min-width: 250px;
+    }
+
+}
