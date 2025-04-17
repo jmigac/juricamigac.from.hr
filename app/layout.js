@@ -1,6 +1,6 @@
 import "./global.css"
-import logo512 from "../public/logo512.jpeg"
-import logo192 from "../public/logo192.jpeg"
+import logo512 from "../public/logo512.jpeg";
+import {Analytics} from "@vercel/analytics/next";
 
 export const metadata = {
     title: 'Jurica Migač | Software Engineer',
@@ -21,12 +21,6 @@ export const metadata = {
                 width: 512,
                 height: 512,
                 alt: ''
-            },
-            {
-                url: `${logo192.src}`,
-                width: 192,
-                height: 192,
-                alt: ''
             }
         ],
         locale: 'en_US',
@@ -38,6 +32,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body>
+                <Analytics />
                 {children}
             </body>
         </html>
