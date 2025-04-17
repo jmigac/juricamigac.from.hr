@@ -1,0 +1,15 @@
+.aboutMeContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.aboutMeTitle {
+    margin-bottom: 1.4rem;
+}
+
+@media (max-width: 1200px) {
+    .aboutMeContainer {
+        padding: 2.5rem;
+    }
+}

@@ -1,0 +1,22 @@
+.footer {
+    display: grid;
+    width: 100%;
+    grid-auto-flow: row;
+    place-items: start;
+    column-gap: calc(0.25rem /* 4px */ * 4) /* 1rem = 16px */;
+    row-gap: calc(0.25rem /* 4px */ * 10) /* 2.5rem = 40px */;
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+}
+.footer > * {
+    display: grid;
+    place-items: start;
+    gap: calc(0.25rem /* 4px */ * 2) /* 0.5rem = 8px */;
+}
+.footerCenter {
+    place-items: center;
+    text-align: center;
+    .footerCenter > * {
+        place-items: center;
+    }
+}
