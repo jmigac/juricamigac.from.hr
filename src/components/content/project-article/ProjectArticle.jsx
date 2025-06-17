@@ -8,7 +8,7 @@ export default function ProjectArticle({ project, index }) {
     const id = index || 0;
     return (
         <div className={`border-b border-stroke dark:border-dark-3 ${id!==0 && 'mt-6'}`}>
-            <h2 className="mb-2 text-2xl font-semibold text-dark dark:text-white">
+            <h2 className="mb-2 text-2xl font-semibold text-dark dark:text-black">
                 {project.title}
             </h2>
             <p className="mb-6 font-normal text-sm text-base text-gray-500 dark:text-gray-400">
